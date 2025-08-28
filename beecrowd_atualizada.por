@@ -68,6 +68,7 @@ programa {
     // valorTotal = totalV1 + totalV2
     // escreva("Valor a pagar: R$ "+ valorTotal)
 
+    // exercicio 6
     // inteiro valor, valor100, valor50, valor20, valor10, valor5, valor2, valor1
     // escreva("Qual o valor a ser pago: R$ ")
     // leia(valor)

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Apostas Lotomania - Sequências</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    .grupo, .sequencia {
+      margin-bottom: 15px;
+    }
+    .grupo-title {
+      font-weight: bold;
+    }
+    .numeros, .sequencias {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+    }
+    .numero {
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #e0e0e0;
+      border-radius: 4px;
+    }
+    button {
+      padding: 10px 15px;
+      margin-bottom: 20px;
+      cursor: pointer;
+    }
+    .sequencia {
+      padding: 5px;
+      border-bottom: 1px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Apostas Lotomania - Grupos e Sequências</h1>
+  <button onclick="gerarApostas()">Gerar Grupos e Sequências</button>
+
+  <h2>Grupos Gerados</h2>
+  <div id="grupos"></div>
+
+  <h2>Sequências (4 letras + 1 número)</h2>
+  <div id="sequencias"></div>
+
+  <script>
+    function gerarNumerosUnicos() {
+      const numeros = [];
+      for (let i = 0; i < 100; i++) {
+        numeros.push(i.toString().padStart(2, '0'));
+      }
+
+      // Embaralhar
+      for (let i = numeros.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [numeros[i], numeros[j]] = [numeros[j], numeros[i]];
+      }
+
+      return numeros;
+    }
+
+    function gerarApostas() {
+      const containerGrupos = document.getElementById('grupos');
+      const containerSequencias = document.getElementById('sequencias');
+      containerGrupos.innerHTML = '';
+      containerSequencias.innerHTML = '';
+
+      const letras = ['A', 'B', 'C', 'D', 'E', 'F', 'G'];
+      const numeros = ['1', '2', '3'];
+      const todosGrupos = [...letras, ...numeros];
+
+      const todosNumeros = gerarNumerosUnicos();
+
+      const grupos = {};
+
+      // Distribui os números nos grupos
+      todosGrupos.forEach((nome, i) => {
+        grupos[nome] = todosNumeros.slice(i * 10, (i + 1) * 10).sort((a, b) => a - b);
+      });
+
+      // Exibe os grupos
+      for (const nome in grupos) {
+        const grupoDiv = document.createElement('div');
+        grupoDiv.classList.add('grupo');
+
+        const titulo = document.createElement('div');
+        titulo.classList.add('grupo-title');
+        titulo.textContent = `Grupo ${nome}`;
+
+        const numerosDiv = document.createElement('div');
+        numerosDiv.classList.add('numeros');
+
+        grupos[nome].forEach(n => {
+          const div = document.createElement('div');
+          div.classList.add('numero');
+          div.textContent = n;
+          numerosDiv.appendChild(div);
+        });
+
+        grupoDiv.appendChild(titulo);
+        grupoDiv.appendChild(numerosDiv);
+        containerGrupos.appendChild(grupoDiv);
+      }
+
+      // Gerar combinações de 4 letras entre A-G
+      const combinacoesLetras = combinar(letras, 4);
+      const sequencias = [];
+
+      // Para cada combinação de letras, juntar com 1 grupo numérico
+      combinacoesLetras.forEach(comb => {
+        numeros.forEach(numGrupo => {
+          const sequencia = [...comb, numGrupo];
+          sequencias.push(sequencia);
+        });
+      });
+
+      // Exibe as sequências
+      sequencias.forEach(seq => {
+        const seqDiv = document.createElement('div');
+        seqDiv.classList.add('sequencia');
+        seqDiv.textContent = `Sequência: ${seq.join(' + ')}`;
+        containerSequencias.appendChild(seqDiv);
+      });
+
+      console.log(`Total de sequências geradas: ${sequencias.length}`);
+    }
+
+    // Função para gerar combinações de k elementos de um array
+    function combinar(arr, k) {
+      const resultado = [];
+
+      function backtrack(inicio, caminho) {
+        if (caminho.length === k) {
+          resultado.push([...caminho]);
+          return;
+        }
+        for (let i = inicio; i < arr.length; i++) {
+          caminho.push(arr[i]);
+          backtrack(i + 1, caminho);
+          caminho.pop();
+        }
+      }
+
+      backtrack(0, []);
+      return resultado;
+    }
+  </script>
+
+</body>
+</html>

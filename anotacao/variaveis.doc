@@ -3,3 +3,8 @@ comando usar o cd inical da pasta mais tecla tab , ai entra na pasta para voltar
 comando clear limpa terminal
 node para abrir o arquivo
 seta pra cima traz o ultimo comando
+npm init -y tem que esta na pasta para criar esse tipo de arquivo. dar na janela do terminal o comando
+depois colocar o comando npm i
+a pasta node_modules fica no manifesto. nao precisa ficar trazendo...
+https://www.npmjs.com/package/prompt-sync?activeTab=versions prompt sync - npm
+=== igual dade restrita

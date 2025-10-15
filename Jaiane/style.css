@@ -1,0 +1,301 @@
+/* Resets e Configurações Globais */
+:root {
+    --primary-color: #E5739D; /* Rosa principal */
+    --secondary-color: #F8B4C8; /* Rosa claro */
+    --dark-color: #333;
+    --light-color: #f4f4f4;
+    --white-color: #fff;
+    --text-color: #555;
+    --font-primary: 'Montserrat', sans-serif;
+    --font-secondary: 'Playfair Display', serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth; /* Efeito de rolagem suave */
+}
+
+body {
+    font-family: var(--font-primary);
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Cabeçalho */
+.header {
+    background: var(--white-color);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+
+.logo {
+    font-family: var(--font-secondary);
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.nav-menu ul {
+    list-style: none;
+    display: flex;
+}
+
+.nav-menu ul li {
+    margin-left: 25px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: var(--dark-color);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-menu a:hover {
+    color: var(--primary-color);
+}
+
+.menu-toggle {
+    display: none; /* Escondido em telas grandes */
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* Seção Hero */
+.hero {
+    background: linear-gradient(rgba(229, 115, 157, 0.1), rgba(248, 180, 200, 0.1)), url('images/hero-background.jpg') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--dark-color);
+    padding-top: 70px; /* Espaço para o header fixo */
+}
+
+.hero h1 {
+    font-family: var(--font-secondary);
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.btn-principal {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+}
+
+.btn-principal:hover {
+    background-color: #d15c85; /* Um tom de rosa mais escuro */
+}
+
+/* Seções Padrão */
+.section {
+    padding: 80px 0;
+}
+
+.bg-light {
+    background-color: #fdf6f8; /* Um rosa muito sutil de fundo */
+}
+
+.section-title {
+    text-align: center;
+    font-family: var(--font-secondary);
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.section-subtitle {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 50px auto;
+}
+
+/* Sobre */
+.sobre-container {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+.sobre-imagem {
+    flex: 1;
+    text-align: center;
+}
+.sobre-imagem img {
+    max-width: 300px;
+    border-radius: 50%;
+    border: 5px solid var(--secondary-color);
+}
+.sobre-texto {
+    flex: 2;
+}
+.sobre-texto h2 {
+    font-family: var(--font-secondary);
+    color: var(--primary-color);
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+.cro-number {
+    margin-top: 15px;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+/* Tratamentos */
+.tratamentos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 50px;
+}
+
+.tratamento-card {
+    background: var(--white-color);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tratamento-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(229, 115, 157, 0.15);
+}
+
+.tratamento-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+/* Consultório */
+.consultorio-galeria {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 40px;
+}
+
+.consultorio-galeria img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+.consultorio-galeria img:hover {
+    transform: scale(1.05);
+}
+
+
+/* Rodapé */
+.footer {
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    text-align: center;
+    padding: 60px 0 20px 0;
+}
+.footer h2 {
+    font-family: var(--font-secondary);
+    color: var(--white-color);
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+.contato-info {
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+
+.contato-info p {
+    margin: 10px 0;
+}
+
+.btn-contato {
+    background-color: #25D366; /* Cor do WhatsApp */
+    color: white;
+    padding: 12px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: 20px;
+    transition: background-color 0.3s;
+}
+.btn-contato:hover {
+    background-color: #1DA851;
+}
+
+.footer-bottom {
+    border-top: 1px solid #444;
+    padding-top: 20px;
+    font-size: 0.9rem;
+}
+
+/* Responsividade para celulares */
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none; /* Esconde o menu normal */
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: white;
+        text-align: center;
+    }
+    .nav-menu.active {
+        display: block; /* Mostra o menu quando ativo */
+    }
+    .nav-menu ul {
+        flex-direction: column;
+    }
+    .nav-menu li {
+        margin: 15px 0;
+    }
+    .menu-toggle {
+        display: block; /* Mostra o botão de menu */
+    }
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+    .sobre-container {
+        flex-direction: column;
+    }
+    .consultorio-galeria {
+        grid-template-columns: 1fr;
+    }
+}

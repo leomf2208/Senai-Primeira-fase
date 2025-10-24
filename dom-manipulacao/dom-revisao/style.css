@@ -1,0 +1,21 @@
+/* *{
+
+} */
+
+/* procura a palavra nome */
+/* #inputNome{
+    
+} */
+
+/* vai editar todos os botoes do html */
+
+button{
+    background-color: blue;
+    color: aqua;
+    border: none;
+    border-radius: 5px;
+}
+
+#btcadastrar{
+    background-color: rgb(240, 7, 7);
+}

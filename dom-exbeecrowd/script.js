@@ -6,7 +6,7 @@
     const combustivel = parseFloat(document.getElementById('combustivel').value);
 
         const consumoMedio = distancia / combustivel;
-        document.getElementById('resultado').textContent = consumoMedio.toFixed(2) + " km/l";
+        document.getElementById('resultado').textContent = "O consumo medio foi " + consumoMedio.toFixed(2) + " km/l";
         }
 
  

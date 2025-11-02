@@ -1,76 +1,107 @@
-/* ======= ESTILO GERAL ======= */
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #2f2f2f;  /* Cinza escuro */
-    color: #f1f1f1;             /* Texto claro */
+* {
+    box-sizing: border-box;
+}
+
+
+html {
+    height: 100%;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;              /* Centraliza verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center;   /* Centraliza verticalmente */
+    background-color: #e6f7ff; /* Tom de azul bem claro para o fundo da página */
+    font-family: Arial, sans-serif;
+}
+
+/* 2. Estiliza o BODY como o "folder" centralizado */
+body {
+    background-color: #ffffff; /* Fundo branco para o "folder" */
+    color: #003366;           /* Texto em azul escuro */
+    
+    /* Efeitos de "folder" */
+    padding: 30px;
+    border-radius: 10px;
+    border: 1px solid #b0c4de; /* Borda azul clara */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    
+    /* Define um tamanho máximo para o folder */
+    max-width: 500px;
+    width: 90%; /* Garante que funcione bem em telas menores */
+    
+    /* Reseta a margem padrão do body */
     margin: 0;
 }
 
-/* ======= CONTAINER PRINCIPAL ======= */
-.container {
-    background-color: #3b3b3b;  /* Cinza médio */
-    padding: 30px 40px;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(243, 10, 10, 0.4);
-    max-width: 400px;
-    width: 90%;
+/* 3. Estiliza os títulos */
+h1, h2 {
     text-align: center;
+    color: #004a99; /* Tom de azul mais forte para títulos */
 }
 
-/* ======= TÍTULOS ======= */
 h1 {
-    color: #ffffff;
-    margin-bottom: 15px;
+    font-size: 2em;
+    margin-top: 0;
+    margin-bottom: 10px;
 }
 
 h2 {
-    color: #cccccc;
+    font-size: 1.2em;
     font-weight: normal;
-    margin-bottom: 25px;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #e6f7ff; /* Linha sutil de separação */
+    padding-bottom: 15px;
 }
 
-/* ======= LABELS E INPUTS ======= */
+/* 4. Alinha os labels e inputs */
 label {
-    display: block;
-    text-align: left;
-    margin-bottom: 5px;
-    color: #e0e0e0;
+    font-weight: bold;
+    display: inline-block;
+    width: 160px; /* Ajusta a largura para alinhar os inputs */
+    text-align: right;
+    margin-right: 10px;
 }
 
 input[type="number"] {
-    width: 100%;
     padding: 8px;
-    border: none;
+    border: 1px solid #b0c4de; /* Borda azul */
     border-radius: 5px;
-    margin-bottom: 15px;
-    background-color: #5a5a5a;
-    color: #fff;
-    font-size: 16px;
+    font-size: 1em;
+    width: 120px;
 }
 
-/* ======= BOTÃO ======= */
+/* 5. Estiliza o botão */
 button {
-    background-color: #6c6c6c;
-    color: white;
-    padding: 10px 20px;
+    display: block; /* Faz o botão ocupar a largura toda */
+    width: 100%;
+    padding: 12px;
+    margin-top: 25px; /* Espaço antes do botão */
+    
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #ffffff; /* Texto branco */
+    background-color: #007bff; /* Azul primário */
+    
     border: none;
-    border-radius: 6px;
+    border-radius: 5px;
     cursor: pointer;
-    font-size: 16px;
-    transition: 0.3s;
+    transition: background-color 0.3s ease;
 }
 
 button:hover {
-    background-color: #8a8a8a;
+    background-color: #0056b3; /* Azul mais escuro ao passar o mouse */
 }
 
-/* ======= RESULTADOS ======= */
-h3, h4 {
-    margin-top: 20px;
-    color: #ffffff;
+/* 6. Estiliza os resultados */
+#valorPresente, #resultado {
+    text-align: center;
+    font-size: 1.2em;
+    margin-top: 25px;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Destaque especial para o resultado final */
+#resultado {
+    background-color: #e6f7ff; /* Fundo azul claro para destacar */
+    color: #004a99;
 }

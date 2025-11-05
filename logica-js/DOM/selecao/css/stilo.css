@@ -14,16 +14,18 @@ header{
 }
 
 a{
-    color: rgb(246, 252, 252);
+    color: rgb(40, 4, 248);
 
 }
 
+/* o . tem referencia por ser uma classe*/
 .container{
     display: flex;
+    
 }
 
 nav{
-    background-color: red;
+    background-color: rgba(241, 5, 76, 0.103);
     padding: 15px 0;
 
 
@@ -62,15 +64,50 @@ nav ul{
 
 
 main{
-    background-color: blue;
+    background-color: rgb(106, 138, 116);
 
     section{
+      
         padding: 20px;
+
+        h2{
+           margin-bottom: 20px;
+        }
+
+        p{
+            line-height: 1.5;
+        }
+
+        h3,h4{
+            margin-bottom: 15px;
+        }
+
+        p{
+            margin-bottom: 15px;
+        }
+
+        article{
+            padding: 10px;
+        }
+
         &#esportes{
+              p{
+            text-align: start;
+            }
+        }
+        &#economia{
+            .container{
+                flex-wrap: wrap;
+            }
+            article{
+                width: 300px;
+            }
+        }
            
         }
     }
-}
+
+
 
 footer{
-background-color: rgb(46, 230, 9);}
+background-color: rgb(31, 9, 230);}

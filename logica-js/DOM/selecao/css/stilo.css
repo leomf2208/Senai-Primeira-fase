@@ -14,7 +14,7 @@ header{
 }
 
 a{
-    color: rgb(40, 4, 248);
+    color: rgb(4, 20, 248);
 
 }
 
@@ -109,5 +109,29 @@ main{
 
 
 
-footer{
-background-color: rgb(31, 9, 230);}
+footer{        
+background-color: rgb(31, 9, 230);
+padding: 15px 0;
+/* 15px 0 significa 15px para cima e para baixo e 0 para direita e esquerda */
+color: aliceblue;
+text-align: center;
+}
+
+
+
+hide{
+    display: nome
+    ;
+}
+
+button{
+    padding: 10-px;
+    border: none;
+    cursor: pointer;
+    color: aliceblue;
+    &show{     background: yellow;}
+}
+
+&#hide{
+    background: red;
+}

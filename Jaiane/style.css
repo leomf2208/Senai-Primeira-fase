@@ -339,7 +339,7 @@ p {
 }
 
 .footer h2 {
-    color: white; /* Título em DOURADO CLARO */
+    color: rgb(20, 20, 20); /* Título em DOURADO CLARO */
     text-align: center;
     font-size: 2.2rem;
 }
